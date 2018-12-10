@@ -102,7 +102,6 @@ class TextDemo extends StatelessWidget{
 
   final TextStyle _textStyle = TextStyle(
     fontSize: 20.0,
-
   );
 
   @override

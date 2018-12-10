@@ -4,15 +4,14 @@ import 'package:flutter_app/demo/bottom_navigation_demo.dart';
 import 'package:flutter_app/demo/listview-demo.dart';
 import 'package:flutter_app/demo/basic_demo.dart';
 import 'package:flutter_app/demo/layout_demo.dart';
+import 'package:flutter_app/demo/view_demo.dart';
 
 class Home extends StatelessWidget{
-
-
 
   @override
   Widget build(BuildContext context) {
     return  DefaultTabController(
-      length: 3,
+      length: 4,
       child: Scaffold(
         backgroundColor: Colors.grey[100],
         appBar: AppBar(
@@ -27,8 +26,9 @@ class Home extends StatelessWidget{
             indicatorWeight:1.0,
             tabs: <Widget>[
               Tab(icon: Icon(Icons.local_florist)),
-              Tab(icon: Icon(Icons.local_activity,size: 30.0,)),
+              Tab(icon: Icon(Icons.local_activity)),
               Tab(icon: Icon(Icons.local_florist)),
+              Tab(icon: Icon(Icons.view_quilt)),
             ],
           ),
           actions: <Widget>[
@@ -45,6 +45,7 @@ class Home extends StatelessWidget{
              ListViewWidget(),
              BasicDemo(),
              LayoutDemo(),
+             ViewDemo(),
            ]),
         drawer: DrawerDemo(),
         bottomNavigationBar:BottomNavigationDemo(),

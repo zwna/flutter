@@ -8,18 +8,28 @@ class LayoutDemo extends StatelessWidget{
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          ConstrainedBox(
-            constraints: BoxConstraints(
-              minHeight: 200.0,
-              maxWidth: 400.0,
-              minWidth: 200.0,
-              maxHeight: 400.0,
-            ),
-            child: Container(
-              color: Colors.blue,
-            ),
-          )
+//          ConstrainedBoxDemo()
+//        AspectRatioDemo()
+        StackDemo()
         ],
+      ),
+    );
+  }
+}
+
+class ConstrainedBoxDemo extends StatelessWidget{
+
+  @override
+  Widget build(BuildContext context) {
+    return  ConstrainedBox(
+      constraints: BoxConstraints(
+        minHeight: 200.0,
+        maxWidth: 300.0,
+        minWidth: 200.0,
+//        maxHeight: 400.0,
+      ),
+      child: Container(
+        color: Colors.blue,//设置背景色
       ),
     );
   }
@@ -42,10 +52,10 @@ class StackDemo extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return  Stack(
-      alignment: Alignment(1.0, 0.0),
+      alignment: Alignment.topLeft,
       children: <Widget>[
         SizedBox(
-          width: 200.0,
+          width: 300.0,
           height: 300.0,
           child: Container(
 //             alignment: Alignment(1.0, -0.5),
@@ -55,13 +65,13 @@ class StackDemo extends StatelessWidget{
           ),
             alignment: Alignment.bottomLeft,
             decoration: BoxDecoration(
-              color: Colors.indigoAccent,
+              color: Colors.black12,
               borderRadius: BorderRadius.circular(15.0),
             ),
           ),
         ),
         SizedBox(
-          height: 20.0,
+          height: 10.0,
         ),
         SizedBox(
           width: 100.0,
@@ -85,42 +95,42 @@ class StackDemo extends StatelessWidget{
             ),
           ),
         ),
-//        Positioned(
-//          top: 20.0,
-//          right: 20.0,
-//          child: Icon(
-//            Icons.ac_unit,
-//            color: Colors.white,
-//            size: 32.0,
-//          ),
-//        ),
-//        Positioned(
-//          top: 55.0,
-//          right: 67.0,
-//          child: Icon(
-//            Icons.ac_unit,
-//            color: Colors.white,
-//            size: 32.0,
-//          ),
-//        ),
-//        Positioned(
-//          top: 58.0,
-//          right: 108.0,
-//          child: Icon(
-//            Icons.ac_unit,
-//            color: Colors.white,
-//            size: 32.0,
-//          ),
-//        ),
-//        Positioned(
-//          top: 100.0,
-//          right: 86.0,
-//          child: Icon(
-//            Icons.ac_unit,
-//            color: Colors.white,
-//            size: 32.0,
-//          ),
-//        ),
+        Positioned(
+          top: 20.0,
+          right: 20.0,
+          child: Icon(
+            Icons.ac_unit,
+            color: Colors.white,
+            size: 32.0,
+          ),
+        ),
+        Positioned(
+          top: 55.0,
+          right: 67.0,
+          child: Icon(
+            Icons.ac_unit,
+            color: Colors.white,
+            size: 20.0,
+          ),
+        ),
+        Positioned(
+          top: 58.0,
+          right: 108.0,
+          child: Icon(
+            Icons.ac_unit,
+            color: Colors.white,
+            size: 18.0,
+          ),
+        ),
+        Positioned(
+          top: 100.0,
+          right: 86.0,
+          child: Icon(
+            Icons.ac_unit,
+            color: Colors.white,
+            size: 16.0,
+          ),
+        ),
       ],
     );
   }
