@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/demo/hello-demo.dart';
+import 'package:flutter_app/demo/sliver_demo.dart';
+import 'package:flutter_app/demo/navigator_demo.dart';
 
 
 main() =>
@@ -25,11 +27,17 @@ class CustomWidget extends StatelessWidget{
     
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Home(),
+//      home: Home(),
+//      home: NavigatorDemo(),
+      initialRoute: "/",
+      routes: {
+        "/":(context) => Home(),
+        "/about":(context) => Page(title: 'About')
+      },
       theme: ThemeData(
         primarySwatch: Colors.deepPurple,
-        highlightColor: Color.fromRGBO(255, 255, 255, 0.5),
-        splashColor: Colors.white70
+        highlightColor: Colors.green,
+        splashColor: Colors.blue
       ),
     );
   }
