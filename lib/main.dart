@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/demo/hello-demo.dart';
 import 'package:flutter_app/demo/sliver_demo.dart';
 import 'package:flutter_app/demo/navigator_demo.dart';
+import 'package:flutter_app/demo/form_demo.dart';
 
 
 main() =>
@@ -29,15 +30,17 @@ class CustomWidget extends StatelessWidget{
       debugShowCheckedModeBanner: false,
 //      home: Home(),
 //      home: NavigatorDemo(),
-      initialRoute: "/",
+      initialRoute: "/form",
       routes: {
         "/":(context) => Home(),
-        "/about":(context) => Page(title: 'About')
+        "/about":(context) => Page(title: 'About'),
+        "/form":(context) => FormDemo(),
       },
       theme: ThemeData(
         primarySwatch: Colors.deepPurple,
         highlightColor: Colors.green,
-        splashColor: Colors.blue
+        splashColor: Colors.blue,
+        accentColor: Colors.red,
       ),
     );
   }
