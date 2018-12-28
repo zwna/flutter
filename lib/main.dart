@@ -40,7 +40,7 @@ class CustomWidget extends StatelessWidget{
       },
       theme: ThemeData(
         primarySwatch: Colors.deepPurple,
-        highlightColor: Colors.green,
+//        highlightColor: Colors.green,
         splashColor: Colors.blue,
         accentColor: Colors.red,
       ),
