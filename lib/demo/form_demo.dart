@@ -5,7 +5,7 @@ class FormDemo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("你好"),
+        title: Text("FormDemo"),
       ),
       body: Theme(
           data: Theme.of(context).copyWith(
