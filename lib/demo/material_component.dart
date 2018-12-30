@@ -5,6 +5,10 @@ import 'package:flutter_app/demo/popup_menu_button_demo.dart';
 import 'package:flutter_app/demo/form_demo.dart';
 import 'package:flutter_app/demo/checkbox_demo.dart';
 import 'package:flutter_app/demo/radio_demo.dart';
+import 'package:flutter_app/demo/switch_demo.dart';
+import 'package:flutter_app/demo/slider_demo.dart';
+import 'package:flutter_app/demo/date_time_demo.dart';
+import 'package:flutter_app/demo/simple_dialog_demo.dart';
 
 class MaterialComponent extends StatelessWidget {
   @override
@@ -24,6 +28,10 @@ class MaterialComponent extends StatelessWidget {
               ListItemWidget(title: 'FormDemo',page: FormDemo()),
               ListItemWidget(title: 'CheckBoxDemo',page: CheckBoxDemo()),
               ListItemWidget(title: 'RadioDemo',page: RadioDemo()),
+              ListItemWidget(title: 'SwitchDemo',page: SwitchDemo()),
+              ListItemWidget(title: 'SliderDemo',page: SliderDemo()),
+              ListItemWidget(title: 'DateTimeDemo',page: DateTimeDemo()),
+              ListItemWidget(title: 'SimpleDislogDemo',page: SimpleDialogDemo()),
             ],
           ),
         );

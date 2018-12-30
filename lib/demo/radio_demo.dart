@@ -31,8 +31,10 @@ class _RadioDemoState extends State<RadioDemo> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            RadioListTile(value: 0, groupValue: _radioGroupA, onChanged: _handleRadioValueChanged,title: Text("第一个RadioListTile"),subtitle: Text("第一个RadioListTile"),selected: _radioGroupA == 0,secondary: Icon(Icons.filter)),
-            RadioListTile(value: 1, groupValue: _radioGroupA, onChanged: _handleRadioValueChanged,title: Text("第二个RadioListTile"),subtitle: Text("第二个RadioListTile"),selected: _radioGroupA == 1,secondary: Icon(Icons.filter)),
+            Text('RadioGroupValue:$_radioGroupA'),
+            SizedBox(height: 32.0),
+            RadioListTile(value: 0, groupValue: _radioGroupA, onChanged: _handleRadioValueChanged,title: Text("第一个RadioListTile"),subtitle: Text("第一个RadioListTile"),selected: _radioGroupA == 0,secondary: Icon(Icons.filter_1)),
+            RadioListTile(value: 1, groupValue: _radioGroupA, onChanged: _handleRadioValueChanged,title: Text("第二个RadioListTile"),subtitle: Text("第二个RadioListTile"),selected: _radioGroupA == 1,secondary: Icon(Icons.filter_1)),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
