@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/demo/hello-demo.dart';
+import 'package:flutter_app/demo/hello_demo.dart';
 import 'package:flutter_app/demo/sliver_demo.dart';
 import 'package:flutter_app/demo/navigator_demo.dart';
 import 'package:flutter_app/demo/form_demo.dart';

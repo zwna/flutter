@@ -9,6 +9,10 @@ import 'package:flutter_app/demo/switch_demo.dart';
 import 'package:flutter_app/demo/slider_demo.dart';
 import 'package:flutter_app/demo/date_time_demo.dart';
 import 'package:flutter_app/demo/simple_dialog_demo.dart';
+import 'package:flutter_app/demo/bottom_sheet_demo.dart';
+import 'package:flutter_app/demo/snack_bar_demo.dart';
+import 'package:flutter_app/demo/expansion_panel_demo.dart';
+import 'package:flutter_app/demo/chip_demo.dart';
 
 class MaterialComponent extends StatelessWidget {
   @override
@@ -32,6 +36,10 @@ class MaterialComponent extends StatelessWidget {
               ListItemWidget(title: 'SliderDemo',page: SliderDemo()),
               ListItemWidget(title: 'DateTimeDemo',page: DateTimeDemo()),
               ListItemWidget(title: 'SimpleDislogDemo',page: SimpleDialogDemo()),
+              ListItemWidget(title: 'BottomSheetDemo',page: BottomSheetDemo()),
+              ListItemWidget(title: 'SnackBarDemo',page: SnackBarDemo()),
+              ListItemWidget(title: 'ExpansionPanelDemo',page: ExpansionPanelDemo()),
+              ListItemWidget(title: 'ChipDemo',page: ChipDemo()),
             ],
           ),
         );
