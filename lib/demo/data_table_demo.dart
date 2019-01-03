@@ -28,14 +28,25 @@ class _DataTableDemoState extends State<DataTableDemo> {
              DataTable(
                sortColumnIndex: _sortColumnIndex,
                sortAscending: _sortAscending,//true表示升序 false表示降序
+                 onSelectAll: (bool value){
+                    setState(() {
+                        postList.forEach((post) {
+                          if(value) {
+                             post.selected = true;
+                           }else{
+                            post.selected = false;
+                          }
+                        });
+                    });
+                    debugPrint("已经全选了 == $value");
+                 },
                columns:[
                DataColumn(label: Text('标题'),onSort: (int index,bool ascending){
                  setState(() {
                    _sortColumnIndex = index;
                    _sortAscending = ascending;
-
+                   debugPrint("ascending == $ascending");
                    postList.sort((a,b){
-                     debugPrint("ascending == $ascending");
                      if(!ascending) {
 //                       final c = a;
 //                       a = b;
@@ -51,7 +62,13 @@ class _DataTableDemoState extends State<DataTableDemo> {
                DataColumn(label: Text('图片')),
                ],
                rows:postList.map<DataRow>((post){
-                 return DataRow(cells:[
+                 return DataRow(selected:post.selected,onSelectChanged:(bool value){
+                   setState(() {
+                     if(post.selected != value){
+                       post.selected = value;
+                     }
+                   });
+                 },cells:[
                    DataCell(Text(post.title)),
                    DataCell(Text(post.author)),
                    DataCell(Image.network(post.imgUrl)),

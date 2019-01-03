@@ -14,6 +14,9 @@ import 'package:flutter_app/demo/snack_bar_demo.dart';
 import 'package:flutter_app/demo/expansion_panel_demo.dart';
 import 'package:flutter_app/demo/chip_demo.dart';
 import 'package:flutter_app/demo/data_table_demo.dart';
+import 'package:flutter_app/demo/paginated_data_table_demo.dart';
+import 'package:flutter_app/demo/card_demo.dart';
+import 'package:flutter_app/demo/stepper_demo.dart';
 
 class MaterialComponent extends StatelessWidget {
   @override
@@ -42,6 +45,9 @@ class MaterialComponent extends StatelessWidget {
               ListItemWidget(title: 'ExpansionPanelDemo',page: ExpansionPanelDemo()),
               ListItemWidget(title: 'ChipDemo',page: ChipDemo()),
               ListItemWidget(title: 'DataTableDemo',page: DataTableDemo()),
+              ListItemWidget(title: 'PaginatedDataTableDemo',page: PaginatedDataTableDemo()),
+              ListItemWidget(title: 'CardDemo',page: CardDemo()),
+              ListItemWidget(title: 'StepperDemo',page: StepperDemo()),
             ],
           ),
         );

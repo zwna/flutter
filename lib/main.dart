@@ -4,6 +4,7 @@ import 'package:flutter_app/demo/sliver_demo.dart';
 import 'package:flutter_app/demo/navigator_demo.dart';
 import 'package:flutter_app/demo/form_demo.dart';
 import 'package:flutter_app/demo/material_component.dart';
+import 'package:flutter_app/demo/state/manage_statement_demo.dart';
 
 
 main() =>
@@ -31,12 +32,13 @@ class CustomWidget extends StatelessWidget{
       debugShowCheckedModeBanner: false,
 //      home: Home(),
 //      home: NavigatorDemo(),
-      initialRoute: "/mdc",
+      initialRoute: "/state_management",
       routes: {
         "/":(context) => Home(),
         "/about":(context) => Page(title: 'About'),
         "/form":(context) => FormDemo(),
         "/mdc":(context) => MaterialComponent(),
+        "/state_management":(context) => ManageStatementDemo(),
       },
       theme: ThemeData(
         primarySwatch: Colors.deepPurple,

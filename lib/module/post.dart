@@ -4,11 +4,13 @@ class Post{
   final String author;
   final String imgUrl;
 
-  const Post({
+  Post({
     this.title,
     this.author,
     this.imgUrl
   });
+
+  bool selected = false;
 }
 
 final List<Post> postList = [
