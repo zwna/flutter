@@ -1,65 +1,77 @@
 import 'package:flutter/material.dart';
+import 'package:scoped_model/scoped_model.dart';
 
-class ManageStatementDemo extends StatefulWidget {
-
- @override
- _ManageStatementDemoState createState() {
-    return _ManageStatementDemoState();
-  }
-}
-
-class _ManageStatementDemoState extends State<ManageStatementDemo>{
-
-  int _count = 0;
-
-  void _increaseCount(){
-    setState(() {
-      _count += 1;
-      debugPrint("_count == $_count");
-    });
-  }
+class ManageStatementDemo extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('ManageStatementDemo'),
-        elevation: 0.0,
-      ),
-      body: CounterWrapper(_count,_increaseCount),
-      floatingActionButton: FloatingActionButton(child:Icon(Icons.add),onPressed:_increaseCount),
-    );
+     return ScopedModel(
+       model: CounterModel(),
+       child: Scaffold(
+         appBar: AppBar(
+           title: Text('ManageStatementDemo'),
+           elevation: 0.0,
+         ),
+         body: CounterWrapper(),
+         floatingActionButton: ScopedModelDescendant<CounterModel>(
+           rebuildOnChange: false,
+             builder: (context,_,model) => FloatingActionButton(child:Icon(Icons.add),onPressed:model.increaseCount,
+             )
+         ),
+       ),
+     );
   }
 }
 
 class Counter extends StatelessWidget {
 
-  final int count;
-
-  final VoidCallback increaseCallBack;
-
-  Counter(this.count,this.increaseCallBack);
-
   @override
   Widget build(BuildContext context) {
-    return ActionChip(label: Text('$count'),onPressed: increaseCallBack);
+    return ScopedModelDescendant<CounterModel>(
+      builder: (context,_,model) => ActionChip(label: Text('${model.count}'),onPressed: model.increaseCount),
+    );
   }
 }
 
 class CounterWrapper extends StatelessWidget {
 
-  final int count;
-
-  final VoidCallback increaseCallBack;
-
-  CounterWrapper(this.count,this.increaseCallBack);
-
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Counter(count, increaseCallBack),
+      child: Counter(),
     );
   }
 }
+
+class CounterProvider extends InheritedWidget {
+
+  final int count;
+  final VoidCallback increaseCallBack;
+  final Widget child;
+
+  CounterProvider({
+    this.count,
+    this.increaseCallBack,
+    this.child
+   }):super(child:child);
+
+  static CounterProvider of(BuildContext context) => context.inheritFromWidgetOfExactType(CounterProvider);
+
+  @override
+  bool updateShouldNotify(InheritedWidget oldWidget) {
+    return true;
+  }
+}
+
+class CounterModel extends Model{
+  int _count = 0;
+  int get count => _count;
+
+  void increaseCount(){
+    _count += 1;
+    notifyListeners();
+  }
+}
+
 
 

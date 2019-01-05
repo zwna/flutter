@@ -5,7 +5,8 @@ import 'package:flutter_app/demo/navigator_demo.dart';
 import 'package:flutter_app/demo/form_demo.dart';
 import 'package:flutter_app/demo/material_component.dart';
 import 'package:flutter_app/demo/state/manage_statement_demo.dart';
-
+import 'package:flutter_app/demo/state/manage_statement_one_demo.dart';
+import 'package:flutter_app/demo/stream/stream_demo.dart';
 
 main() =>
   runApp(
@@ -32,13 +33,15 @@ class CustomWidget extends StatelessWidget{
       debugShowCheckedModeBanner: false,
 //      home: Home(),
 //      home: NavigatorDemo(),
-      initialRoute: "/state_management",
+      initialRoute: "/stream",
       routes: {
         "/":(context) => Home(),
         "/about":(context) => Page(title: 'About'),
         "/form":(context) => FormDemo(),
         "/mdc":(context) => MaterialComponent(),
         "/state_management":(context) => ManageStatementDemo(),
+        "/state_management_one":(context) => ManageStatementOneDemo(),
+        "/stream":(context) => StreamDemoHome(),
       },
       theme: ThemeData(
         primarySwatch: Colors.deepPurple,
