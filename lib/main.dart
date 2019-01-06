@@ -41,7 +41,7 @@ class CustomWidget extends StatelessWidget{
         "/mdc":(context) => MaterialComponent(),
         "/state_management":(context) => ManageStatementDemo(),
         "/state_management_one":(context) => ManageStatementOneDemo(),
-        "/stream":(context) => StreamDemoHome(),
+        "/stream":(context) => StreamDemo(),
       },
       theme: ThemeData(
         primarySwatch: Colors.deepPurple,
