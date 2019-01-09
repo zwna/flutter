@@ -7,14 +7,21 @@ class CounterHomeDemo extends StatelessWidget {
   Widget build(BuildContext context) {
     CounterBloc _counterBloc = CounterProvider.of(context).counterBloc;
     return Center(
-      child: ActionChip(label: Text('0'),
-          onPressed: () {
+      child: StreamBuilder(
+        initialData: 0,
+        stream: _counterBloc.count,
+        builder: (context,data){
+          return ActionChip(label: Text('${data.data}'),
+              onPressed: () {
 //          _counterBloc.log();
-            _counterBloc._counterActionController.add(1);
-      }),
+                _counterBloc._counterActionController.add(1);
+              });
+        },
+      ),
     );
   }
 }
+
 
 class CounterActionButton extends StatelessWidget {
 
@@ -49,10 +56,14 @@ class CounterProvider extends InheritedWidget {
 }
 
 class CounterBloc {
+  int _count = 0;
 
   final _counterActionController = StreamController<int>();
 
+  final _counterController = StreamController<int>();
+
   StreamSink<int> get counter => _counterActionController.sink;
+  Stream<int> get count => _counterController.stream;
 
   CounterBloc(){
     _counterActionController.stream.listen(onData);
@@ -66,9 +77,12 @@ class CounterBloc {
 
   void onData(int event) {
     print("$event");
+    _count = event + _count;
+    _counterController.add(_count);
   }
 
   void dispose(){
     _counterActionController.close();
+    _counterController.close();
   }
 }
