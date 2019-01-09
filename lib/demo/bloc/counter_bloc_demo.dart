@@ -82,6 +82,7 @@ class CounterBloc {
   }
 
   void dispose(){
+    debugPrint("没执行啊");
     _counterActionController.close();
     _counterController.close();
   }
