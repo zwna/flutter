@@ -8,6 +8,7 @@ import 'package:flutter_app/demo/state/manage_statement_demo.dart';
 import 'package:flutter_app/demo/state/manage_statement_one_demo.dart';
 import 'package:flutter_app/demo/stream/stream_demo.dart';
 import 'package:flutter_app/demo/rxdart/rxdart_demo.dart';
+import 'package:flutter_app/demo/bloc/bloc_demo.dart';
 
 main() =>
   runApp(
@@ -34,7 +35,7 @@ class CustomWidget extends StatelessWidget{
       debugShowCheckedModeBanner: false,
 //      home: Home(),
 //      home: NavigatorDemo(),
-      initialRoute: "/rxdart",
+      initialRoute: "/bloc",
       routes: {
         "/":(context) => Home(),
         "/about":(context) => Page(title: 'About'),
@@ -44,6 +45,7 @@ class CustomWidget extends StatelessWidget{
         "/state_management_one":(context) => ManageStatementOneDemo(),
         "/stream":(context) => StreamDemo(),
         "/rxdart":(context) => RxDartDemo(),
+        "/bloc":(context) => BlocDemo(),
       },
       theme: ThemeData(
         primarySwatch: Colors.deepPurple,
