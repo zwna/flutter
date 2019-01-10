@@ -99,11 +99,18 @@ class Post{
 
   Post(this.id,this.title,this.description,this.author,this.imageUrl);
 
-  Post.fromMap(Map json):id = json['id'],title = json['title'],description = json['desc'],author = json['author'],imageUrl = json['imageUrl'];
+  Post.fromMap(Map json):id = json['id'],title = json['title'],description = json['description'],author = json['author'],imageUrl = json['imageUrl'];
 
   Map toJson() => {
     "title":title,
     "desc":description
   };
+
+  @override
+  String toString() {
+    return 'Post{id: $id, title: $title, description: $description, author: $author, imageUrl: $imageUrl}';
+  }
+
+
 }
 
