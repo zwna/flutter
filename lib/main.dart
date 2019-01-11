@@ -10,16 +10,10 @@ import 'package:flutter_app/demo/stream/stream_demo.dart';
 import 'package:flutter_app/demo/rxdart/rxdart_demo.dart';
 import 'package:flutter_app/demo/bloc/bloc_demo.dart';
 import 'package:flutter_app/demo/http/http_demo.dart';
+import 'package:flutter_app/demo/animation/animation_demo.dart';
 
 main() =>
   runApp(
-//    Center(
-//          child: Text(
-//            'Hello',
-//            textDirection: TextDirection.ltr,
-//          ),
-//    )
-
   CustomWidget()
   );
 
@@ -36,7 +30,7 @@ class CustomWidget extends StatelessWidget{
       debugShowCheckedModeBanner: false,
 //      home: Home(),
 //      home: NavigatorDemo(),
-      initialRoute: "/http",
+      initialRoute: "/animation",
       routes: {
         "/":(context) => Home(),
         "/about":(context) => Page(title: 'About'),
@@ -48,6 +42,7 @@ class CustomWidget extends StatelessWidget{
         "/rxdart":(context) => RxDartDemo(),
         "/bloc":(context) => BlocDemo(),
         "/http":(context) => HttpDemo(),
+        "/animation":(context) => AnimationDemo(),
       },
       theme: ThemeData(
         primarySwatch: Colors.deepPurple,
