@@ -31,8 +31,8 @@ class CustomWidget extends StatelessWidget{
   Widget build(BuildContext context) {
     
     return MaterialApp(
-//      locale: Locale('en','US'),
-      locale: Locale('zh','CN'),
+      locale: Locale('en','US'),
+//      locale: Locale('zh','CN'),
 //      localeResolutionCallback: (Locale locale,Iterable<Locale> supportedLocales){
 //         return Locale('en','US');
 //      },
