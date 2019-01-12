@@ -11,6 +11,10 @@ import 'package:flutter_app/demo/rxdart/rxdart_demo.dart';
 import 'package:flutter_app/demo/bloc/bloc_demo.dart';
 import 'package:flutter_app/demo/http/http_demo.dart';
 import 'package:flutter_app/demo/animation/animation_demo.dart';
+import 'package:flutter_app/demo/i18n/i18n_demo.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+//import 'package:flutter_app/demo/i18n/map/flutter_localizations.dart';
+import 'package:flutter_app/demo/i18n/intl/fluttter_localizations_intl.dart';
 
 main() =>
   runApp(
@@ -27,10 +31,24 @@ class CustomWidget extends StatelessWidget{
   Widget build(BuildContext context) {
     
     return MaterialApp(
+//      locale: Locale('en','US'),
+      locale: Locale('zh','CN'),
+//      localeResolutionCallback: (Locale locale,Iterable<Locale> supportedLocales){
+//         return Locale('en','US');
+//      },
+      localizationsDelegates: [
+        FlutterLocalizationsDelegate(),
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate
+      ],
+      supportedLocales: [
+        Locale('en','US'),
+        Locale('zh','CN'),
+      ],
       debugShowCheckedModeBanner: false,
 //      home: Home(),
 //      home: NavigatorDemo(),
-      initialRoute: "/animation",
+      initialRoute: "/i18n",
       routes: {
         "/":(context) => Home(),
         "/about":(context) => Page(title: 'About'),
@@ -43,6 +61,7 @@ class CustomWidget extends StatelessWidget{
         "/bloc":(context) => BlocDemo(),
         "/http":(context) => HttpDemo(),
         "/animation":(context) => AnimationDemo(),
+        "/i18n":(context) => I18nDemo(),
       },
       theme: ThemeData(
         primarySwatch: Colors.deepPurple,

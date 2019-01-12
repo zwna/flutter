@@ -1,0 +1,17 @@
+{
+  "@@last_modified": "2019-01-12T17:26:39.902454",
+  "title": "你好",
+  "@title": {
+    "description": "打招呼",
+    "type": "text",
+    "placeholders": {}
+  },
+  "greet": "你好 {name}",
+  "@greet": {
+    "description": "向某人打招呼",
+    "type": "text",
+    "placeholders": {
+      "name": {}
+    }
+  }
+}
