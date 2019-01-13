@@ -15,6 +15,7 @@ import 'package:flutter_app/demo/i18n/i18n_demo.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 //import 'package:flutter_app/demo/i18n/map/flutter_localizations.dart';
 import 'package:flutter_app/demo/i18n/intl/fluttter_localizations_intl.dart';
+import 'package:flutter_app/demo/test/test_demo.dart';
 
 main() =>
   runApp(
@@ -48,7 +49,7 @@ class CustomWidget extends StatelessWidget{
       debugShowCheckedModeBanner: false,
 //      home: Home(),
 //      home: NavigatorDemo(),
-      initialRoute: "/i18n",
+      initialRoute: "/test",
       routes: {
         "/":(context) => Home(),
         "/about":(context) => Page(title: 'About'),
@@ -62,6 +63,7 @@ class CustomWidget extends StatelessWidget{
         "/http":(context) => HttpDemo(),
         "/animation":(context) => AnimationDemo(),
         "/i18n":(context) => I18nDemo(),
+        "/test":(context) => TestDemo(),
       },
       theme: ThemeData(
         primarySwatch: Colors.deepPurple,
