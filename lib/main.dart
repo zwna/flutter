@@ -49,7 +49,7 @@ class CustomWidget extends StatelessWidget{
       debugShowCheckedModeBanner: false,
 //      home: Home(),
 //      home: NavigatorDemo(),
-      initialRoute: "/test",
+      initialRoute: "/i18n",
       routes: {
         "/":(context) => Home(),
         "/about":(context) => Page(title: 'About'),
